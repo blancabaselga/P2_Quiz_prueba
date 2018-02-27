@@ -140,19 +140,17 @@ exports.testCmd = (rl,id) => {
 		try{
 			const quiz = model.getByIndex(id);
 
-			//log(`[${colorize(id,'magenta')}] : ${quiz.question}`);
-
 			rl.question(colorize(`${quiz.question}? `,'red'), answer => {
 							
-					if(quiz.answer.toLowerCase() === answer.trim().toLowerCase()){
+					if(quiz.answer.trim().toLowerCase() === answer.trim().toLowerCase()){
 
 						log(`Su respuesta es: `);
-						biglog('Correcta','green');
+						biglog('correcta','green');
 						rl.prompt();
 
 					} else{
 						log(`Su respuesta es: `);
-						biglog('Incorrecta','red');
+						biglog('incorrecta','red');
 						rl.prompt();
 
 					};	
@@ -163,6 +161,7 @@ exports.testCmd = (rl,id) => {
 			rl.prompt();
 		}
 	}
+	rl.prompt();
 };
 
 

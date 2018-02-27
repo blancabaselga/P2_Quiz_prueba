@@ -13,7 +13,7 @@
 	const rl = readline.createInterface({
 	  input: process.stdin,
 	  output: process.stdout,
-	  prompt: colorize('quiz > ','blue'),   // Ojo la coma antes de copiar el "completer"
+	  prompt: colorize('quiz >','blue'),   // Ojo la coma antes de copiar el "completer"
 	  completer: (line) => { 
 		  const completions = 'h help add delete edit list test p play credits q quit'.split(' ');
 		  const hits = completions.filter((c) => c.startsWith(line));
