@@ -136,7 +136,12 @@ exports.testCmd = (rl,id) => {
 	if (typeof id === "undefined"){
 		errorlog(`Falta el parámetro id.`);
 		rl.prompt();
-	}else{
+	}
+	if(id > model.count()-1){
+		errorlog(`Id no válido`);
+	}
+
+		else{
 		try{
 			const quiz = model.getByIndex(id);
 
